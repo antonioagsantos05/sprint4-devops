@@ -1,0 +1,12 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'conexao'
+    appName: 'sprint4-devops'
+    package: $(System.DefaultWorkingDirectory)/**/*.zip
